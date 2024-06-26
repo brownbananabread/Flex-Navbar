@@ -1,40 +1,26 @@
 /*=============== GOOGLE FONTS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
 
-/*=============== VARIABLES CSS ===============*/
 :root {
   --header-height: 3.5rem;
-
-  /*========== Colors ==========*/
-  /*Color mode HSL(hue, saturation, lightness)*/
-  --black-color: hsl(220, 24%, 12%);
-  --black-color-light: hsl(220, 24%, 15%);
-  --black-color-lighten: hsl(220, 20%, 18%);
-  --white-color: #fff;
-  --body-color: hsl(220, 100%, 97%);
-
-  /*========== Font and typography ==========*/
-  /*.5rem = 8px | 1rem = 16px ...*/
+  --black-colour: rgb(0, 0, 0);
+  --white-color: rgb(255, 255, 255);
+  --offwhite-colour: hsl(220, 100%, 97%);
   --body-font: "Montserrat", sans-serif;
   --normal-font-size: .938rem;
-
-  /*========== Font weight ==========*/
   --font-regular: 400;
   --font-semi-bold: 600;
-
-  /*========== z index ==========*/
   --z-tooltip: 10;
   --z-fixed: 100;
 }
 
-/*========== Responsive typography ==========*/
 @media screen and (min-width: 1024px) {
   :root {
     --normal-font-size: 1rem;
   }
 }
 
-/*=============== BASE ===============*/
+/* Base */
 * {
   box-sizing: border-box;
   padding: 0;
@@ -44,7 +30,7 @@
 body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
-  background-color: var(--body-color);
+  background-color: var(--offwhite-colour);
 }
 
 ul {
@@ -57,19 +43,18 @@ a {
   text-decoration: none;
 }
 
-/*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 1120px;
   margin-inline: 1.5rem;
 }
 
-/*=============== HEADER ===============*/
+/* Header */
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var(--black-color);
+  background-color: var(--white-color);
   box-shadow: 0 2px 16px hsla(220, 32%, 8%, .3);
   z-index: var(--z-fixed);
 }
@@ -82,7 +67,7 @@ a {
 .nav__logo, 
 .nav__burger, 
 .nav__close {
-  color: var(--white-color);
+  color: var(--black-colour);
 }
 
 .nav__data {
@@ -97,8 +82,6 @@ a {
   align-items: center;
   column-gap: .25rem;
   font-weight: var(--font-semi-bold);
-  /* Color highlighting when pressed on mobile devices */
-  /*-webkit-tap-highlight-color: transparent;*/
 }
 
 .nav__logo i {
@@ -145,14 +128,14 @@ a {
     width: 0;
   }
   .nav__list {
-    background-color: var(--black-color);
+    background-color: var(--white-color);
     padding-top: 1rem;
   }
 }
 
 .nav__link {
-  color: var(--white-color);
-  background-color: var(--black-color);
+  color: var(--black-colour);
+  background-color: var(--white-color);
   font-weight: var(--font-semi-bold);
   padding: 1.25rem 1.5rem;
   display: flex;
@@ -162,7 +145,7 @@ a {
 }
 
 .nav__link:hover {
-  background-color: var(--black-color-light);
+  background-color: var(--offwhite-colour);
 }
 
 /* Show menu */
@@ -182,7 +165,7 @@ a {
   transform: rotate(90deg);
 }
 
-/*=============== DROPDOWN ===============*/
+/* Dropdown */
 .dropdown__item {
   cursor: pointer;
 }
@@ -196,8 +179,8 @@ a {
 .dropdown__link, 
 .dropdown__sublink {
   padding: 1.25rem 1.25rem 1.25rem 2.5rem;
-  color: var(--white-color);
-  background-color: var(--black-color-light);
+  color: var(--black-colour);
+  background-color: var(--white-color);
   display: flex;
   align-items: center;
   column-gap: .5rem;
@@ -213,7 +196,7 @@ a {
 
 .dropdown__link:hover, 
 .dropdown__sublink:hover {
-  background-color: var(--black-color);
+  background-color: var(--offwhite-colour);
 }
 
 .dropdown__menu, 
@@ -235,16 +218,16 @@ a {
   transform: rotate(180deg);
 }
 
-/*=============== DROPDOWN SUBMENU ===============*/
+/* Dropdown Submenu */
 .dropdown__add {
   margin-left: auto;
 }
 
 .dropdown__sublink {
-  background-color: var(--black-color-lighten);
+  background-color: var(--white-color);
 }
 
-/*=============== BREAKPOINTS ===============*/
+/* Breakpoints */
 /* For small devices */
 @media screen and (max-width: 340px) {
   .container {
